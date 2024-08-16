@@ -1,9 +1,7 @@
-abstract type AbstractKernel end
-
 """SquaredExponentialKernel
 
 """
-struct SquaredExponentialKernel{T} <: AbstractKernel
+struct SquaredExponentialKernel{T} <: AbstractApproximator
     σ::T
 end
 
@@ -22,12 +20,4 @@ function (k::SquaredExponentialKernel)(X, Y, ::Δ)
 end
 
 function (k::SquaredExponentialKernel)(X, Y, ::Δ²)
-end
-
-"""Matern52Kernel
-
-"""
-struct Matern52Kernel{T} <: AbstractKernel
-    σ::T
-    ρ::T
 end

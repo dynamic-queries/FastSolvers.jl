@@ -1,14 +1,11 @@
-abstract type AbstractDifferentialOperator end
+abstract type AbstractProblem end
+struct BVP <: AbstractProblem end
+struct IVP <: AbstractProblem end
+struct EVP <: AbstractProblem end
+struct Auto <: AbstractProblem end
+export BVP, IVP, EVP, Auto
 
-# Abstract differential operators. See docs for detailed description.
-struct ∇ <: AbstractDifferentialOperator end
-struct Δ <: AbstractDifferentialOperator end
-struct Δ² <: AbstractDifferentialOperator end
-
-abstract type AbstractFastSolver end
-
-struct BVPSolver <: AbstractFastSolver
-end
-
-struct IVPSolver <: AbstractFastSolver
-end
+abstract type AbstractClass end
+struct Linear <: AbstractClass end
+struct Nonlinear <: AbstractClass end
+export Linear, Nonlinear
